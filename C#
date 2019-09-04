@@ -1,0 +1,23 @@
+using System;
+
+        class Solution
+        {
+            public int[] solution(int[] A, int K)
+            {
+                if (K == 0) { return A; }
+                else
+                {   int ALen = A.Length;
+                    int[] B = new int[ALen];
+                    int posun = K % ALen;
+
+                    for (int i = 0; i < ALen - posun; i++)
+                    {   B[i + posun] = A[i];}
+
+                    for (int i = ALen - posun; i < ALen; i++)
+                    {   B[i - ALen + posun] = A[i];}
+
+                return B;
+                }
+            }
+        }
+        
